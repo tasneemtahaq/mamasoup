@@ -1,3 +1,4 @@
+// CartPage.tsx
 "use client";
 
 import Navbar from '@/app/components/Navbar';
@@ -17,7 +18,6 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
       <Navbar />
-
       <section className="text-center py-20">
         <h3 className="text-3xl font-semibold mb-4">Your Cart</h3>
         {cart.length === 0 ? (
@@ -33,7 +33,6 @@ export default function CartPage() {
                 <span className="text-gray-700">${(dish.price * dish.quantity).toFixed(2)}</span>
                 <div className="flex items-center space-x-2">
                   <div className="flex items-center space-x-2">
-                    {/* Decrement button */}
                     <button
                       className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
                       onClick={() => decrementItem(dish.name)}
@@ -41,7 +40,6 @@ export default function CartPage() {
                       -
                     </button>
                     <span className="text-gray-700">Qty: {dish.quantity}</span>
-                    {/* Increment button */}
                     <button
                       className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600"
                       onClick={() => incrementItem(dish.name)}
@@ -49,8 +47,6 @@ export default function CartPage() {
                       +
                     </button>
                   </div>
-
-                  {/* Remove button */}
                   <button
                     className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
                     onClick={() => removeFromCart(dish.name)}
@@ -61,13 +57,11 @@ export default function CartPage() {
               </div>
             ))}
 
-            {/* Display Cart Total */}
             <div className="flex justify-between bg-white p-4 mt-8 rounded shadow-md text-xl font-semibold">
               <span>Total:</span>
               <span>${cartTotal.toFixed(2)}</span>
             </div>
 
-            {/* Checkout Button */}
             <div className="mt-8 text-center">
               <Link href="/checkout">
                 <button className="bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600">

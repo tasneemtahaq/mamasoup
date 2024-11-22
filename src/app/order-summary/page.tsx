@@ -1,107 +1,125 @@
-// src/app/order-summary/page.tsx
 "use client";
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Navbar from "../components/Navbar";
 
-interface Item {
+interface CartItem {
   name: string;
-  quantity: number;
   price: number;
+  quantity: number;
+  
 }
 
 interface OrderDetails {
-  items: Item[];
-  total: number;
-  estimatedDeliveryTime: string;
+  cart: CartItem[];
+  name: string;
+  contact: string;
+  address: string;
 }
 
-const OrderSummaryPage = () => {
-  const [orderDetails, setOrderDetails] = useState<OrderDetails>({
-    items: [],
-    total: 0,
-    estimatedDeliveryTime: '',
-  });
-  const [orderStatus, setOrderStatus] = useState<string | null>(null);
+const OrderSummaryPage: React.FC = () => {
+  const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const mockOrderDetails: OrderDetails = {
-      items: [
-        { name: 'Chicken CornSoup (Single)', quantity: 1, price: 12.99 },
-        { name: 'Slims', quantity: 2, price: 2.49 },
-      ],
-      total: 17.97,
-      estimatedDeliveryTime: '45 minutes',
-    };
-    setOrderDetails(mockOrderDetails);
-  }, []);
-
-  const handlePlaceOrder = async () => {
-    try {
-      const response = await fetch('/api/place-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'John Doe', // Replace with actual form data
-          contact: '+1234567890', // Replace with actual contact number
-          address: '123 Street, City', // Replace with actual address
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        setOrderStatus(`Error: ${errorData.error}`);
-        return;
-      }
-
-      const data = await response.json();
-      setOrderStatus(data.message);
-    } catch (error) {
-      console.error("Error placing order:", error);
-      setOrderStatus("Server error while placing the order.");
+    // Retrieve order details from localStorage
+    const savedOrderDetails = localStorage.getItem("orderDetails");
+    if (savedOrderDetails) {
+      setOrderDetails(JSON.parse(savedOrderDetails));
+    } else {
+      // If no order details, redirect to home after a brief delay
+      setTimeout(() => {
+        router.push("/");
+      }, 3000);
     }
+    setIsLoading(false);
+  }, [router]);
+
+  // Dynamically calculate estimated delivery time
+  const calculateEstimatedDeliveryTime = () => {
+    const randomMinutes = Math.floor(Math.random() * (60 - 30 + 1)) + 30;
+    return `${randomMinutes} minutes`;
   };
 
+  if (isLoading) {
+    return <p className="text-center mt-12">Loading...</p>;
+  }
+
+  if (!orderDetails) {
+    return (
+      <div className="text-center mt-12">
+        <p>No order found. Redirecting to home...</p>
+      </div>
+    );
+  }
+
+  const { cart, name, contact, address } = orderDetails;
+  const estimatedDeliveryTime = calculateEstimatedDeliveryTime();
+  const orderTotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   return (
-    <div className="max-w-xl mx-auto py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">Order Summary</h2>
+    <div className="min-h-screen bg-gray-100 text-gray-800">
+      <Navbar />
+      <div className="max-w-xl mx-auto py-12">
+        <h2 className="text-3xl font-bold text-center mb-8 text-black">
+          Order Confirmation
+        </h2>
+        <div className="bg-white p-6 rounded-lg shadow-lg space-y-6">
+          <h3 className="text-xl font-semibold mb-4">Customer Details</h3>
+          <p>
+            <strong>Name:</strong> {name}
+          </p>
+          <p>
+            <strong>Contact:</strong> {contact}
+          </p>
+          <p>
+            <strong>Address:</strong> {address}
+          </p>
 
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-semibold mb-4">Your Order</h3>
-        <ul>
-          {orderDetails.items.map((item, index) => (
-            <li key={index} className="flex justify-between mb-2">
-              <span>{item.name} x{item.quantity}</span>
-              <span>${(item.price * item.quantity).toFixed(2)}</span>
-            </li>
-          ))}
-        </ul>
-        <hr className="my-4" />
-        <div className="flex justify-between">
-          <span className="font-bold">Total:</span>
-          <span className="font-bold">${orderDetails.total.toFixed(2)}</span>
+          <hr />
+
+          <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
+          <ul>
+            {cart.map((item, index) => (
+              <li key={index} className="flex justify-between mb-2">
+                <span>
+                  {item.name} x{item.quantity}
+                </span>
+                <span>${(item.price * item.quantity).toFixed(2)}</span>
+              </li>
+            ))}
+          </ul>
+
+          <hr />
+
+          <div className="flex justify-between text-lg font-bold">
+            <span>Total:</span>
+            <span>${orderTotal.toFixed(2)}</span>
+          </div>
+
+          <div className="mt-6">
+            <p className="text-center text-green-600 font-semibold">
+              Thank you for your order! 🎉<br></br>
+              Your Order is placed for Cash on Delivery
+            </p>
+            <p className="text-center">
+              Your order will be delivered in approximately{" "}
+              <strong>{estimatedDeliveryTime}</strong>.
+            </p>
+          </div>
+
+          <button
+            onClick={() => router.push("/")}
+            className="w-full bg-green-600 text-white py-2 rounded-lg mt-6 hover:bg-green-700 transition"
+          >
+            Back to Home
+          </button>
         </div>
-        <div className="mt-4">
-          <span className="font-semibold">Estimated Delivery Time: </span>
-          <span>{orderDetails.estimatedDeliveryTime}</span>
-        </div>
-
-        <button
-          onClick={handlePlaceOrder}
-          className="w-full bg-blue-600 text-white py-2 rounded-md mt-6"
-        >
-          Place Order
-        </button>
-
-        {orderStatus && <p className="mt-4">{orderStatus}</p>}
-
-        <button
-          onClick={() => router.push('/')}
-          className="w-full bg-green-600 text-white py-2 rounded-md mt-6"
-        >
-          Back to Home
-        </button>
       </div>
     </div>
   );
