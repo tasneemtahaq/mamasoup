@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/app/checkout/page.tsx
-'use client';
 'use client';
 
 import { useState } from 'react';
@@ -19,7 +17,7 @@ const CheckoutPage: React.FC = () => {
   const router = useRouter();
 
   const handlePlaceOrder = async () => {
-    if (!name || !contact || !address) {
+    if (!name || !contact || !address ) { // Validate city field
       setError('All fields are required.');
       return;
     }
@@ -31,35 +29,36 @@ const CheckoutPage: React.FC = () => {
 
     try {
       // Save order details to localStorage
-      localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
-  
+      localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+
       // Make API call to handle the order
-      const response = await fetch("/api/place-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/place-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderDetails), // Pass all order data
       });
-  
+
       if (!response.ok) {
         const { error } = await response.json();
-        throw new Error(error || "Failed to place order.");
+        throw new Error(error || 'Failed to place order.');
       }
-        // Clear the cart after successful order placement
-    clearCart();
 
-    // Redirect to the order summary page
-    router.push("/order-summary");
-  } catch (err: any) {
-    setError(err.message || "Something went wrong.");
-  } finally {
-    setLoading(false);
-  }
-};
+      // Clear the cart after successful order placement
+      clearCart();
+
+      // Redirect to the order summary page
+      router.push('/order-summary');
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <Navbar />
-      <div className='max-w-xl mx-auto py-12'>
+      <div className="max-w-xl mx-auto py-12">
         <h2 className="text-3xl font-bold text-center mb-8 text-black">Checkout</h2>
         <form onSubmit={(e) => e.preventDefault()} className="bg-white p-8 rounded-lg shadow-lg space-y-6">
           <div>
@@ -94,6 +93,15 @@ const CheckoutPage: React.FC = () => {
               placeholder="Shipping Address"
               className="w-full p-2 border border-gray-300 rounded text-gray-700 placeholder-gray-700"
             />
+          </div>
+          <div>
+              <label className="block text-sm font-medium text-gray-600 mb-1">City</label>
+              <input
+              type="text"
+              value="Karachi" // Set the value to Karachi
+              readOnly // Make the field uneditable
+              className="w-full p-2 border border-gray-300 rounded text-gray-700 placeholder-gray-700"
+               />
           </div>
 
           <button

@@ -5,7 +5,14 @@ export async function POST(request: Request) {
   const { name, contact, address, cart } = await request.json();
 
   // Set up Twilio client
-  const client = twilio('AC63c7a55eba2df9586a8160c1654291aa', '450df602a33a6961b272f06ff3ab70c1'); // Replace with your Twilio credentials
+  const accountSid = process.env.TWILIO_ACCOUNT_SID; 
+  const authToken = process.env.TWILIO_AUTH_TOKEN; 
+
+  if (!accountSid || !authToken) {
+    return NextResponse.json({ error: 'Twilio credentials are missing' }, { status: 500 });
+  }
+
+  const client = twilio(accountSid, authToken);
 
   // Create the message body with order details
   let message = `New Order:\nName: ${name}\nContact: ${contact}\nAddress: ${address}\n\nOrder Items:\n`;
@@ -28,8 +35,10 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ message: 'Order placed successfully!' });
-  } catch (error) {
-    console.error('Error sending SMS:', error);
-    return NextResponse.json({ error: 'Failed to send order message' }, { status: 500 });
+  } catch (error: unknown) {
+    // Cast error to 'Error' type to access 'message' and handle it
+    const e = error as Error;
+    console.error('Error sending SMS:', e.message);
+    return NextResponse.json({ error: 'Failed to send order message', details: e.message }, { status: 500 });
   }
 }

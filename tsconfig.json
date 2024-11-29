@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["node", "react", "react-dom", "react-slick"]
+    "types": ["node", "react", "react-dom", "react-slick", "twilio"]
   },
   "include": [
     "next-env.d.ts",

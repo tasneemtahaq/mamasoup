@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -7,44 +7,30 @@ const Footer: React.FC = () => {
       {/* Social Media Icons */}
       <div className="flex justify-center space-x-6">
         <a
-          href="https://facebook.com"
+          href="https://facebook.com/mamasoupsandbeverages/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-yellow-600 text-xl"
+          className="hover:text-orange-500 text-xl"
         >
           <FaFacebookF />
         </a>
+       
         <a
-          href="https://twitter.com"
+          href="https://instagram.com/mamasoups/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-yellow-600 text-xl"
-        >
-          <FaTwitter />
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-yellow-600 text-xl"
+          className="hover:text-orange-500 text-xl"
         >
           <FaInstagram />
         </a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-yellow-600 text-xl"
-        >
-          <FaLinkedinIn />
-        </a>
+      
       </div>
 
       {/* Footer Links */}
       <div className="flex justify-center space-x-6 text-sm">
-        <a href="#" className="hover:text-yellow-600">About Us</a>
-        <a href="#" className="hover:text-yellow-600">Privacy Policy</a>
-        <a href="#" className="hover:text-yellow-600">Terms of Service</a>
+        <a href="#" className="hover:text-orange-500">About Us</a>
+        <a href="#" className="hover:text-orange-500">Privacy Policy</a>
+        <a href="#" className="hover:text-orange-500">Terms of Service</a>
       </div>
 
       {/* Copyright Section */}

@@ -30,7 +30,7 @@ export default function CartPage() {
                   <Image src={dish.image} alt={dish.name} width={50} height={50} />
                   <span className="ml-4 font-semibold">{dish.name}</span>
                 </div>
-                <span className="text-gray-700">${(dish.price * dish.quantity).toFixed(2)}</span>
+                <span className="text-gray-700">Rs.{(dish.price * dish.quantity).toFixed(2)}</span>
                 <div className="flex items-center space-x-2">
                   <div className="flex items-center space-x-2">
                     <button
@@ -59,7 +59,7 @@ export default function CartPage() {
 
             <div className="flex justify-between bg-white p-4 mt-8 rounded shadow-md text-xl font-semibold">
               <span>Total:</span>
-              <span>${cartTotal.toFixed(2)}</span>
+              <span>Rs.{cartTotal.toFixed(2)}</span>
             </div>
 
             <div className="mt-8 text-center">
