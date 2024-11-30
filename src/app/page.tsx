@@ -5,15 +5,17 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from './components/Footer';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Custom Arrow Component
 const CustomArrow: React.FC<{ onClick?: () => void; direction: 'prev' | 'next' }> = ({ onClick, direction }) => (
   <button
-    className={`absolute ${direction === 'prev' ? 'left-5' : 'right-5'} top-1/2 transform -translate-y-1/2 z-10 cursor-pointer bg-orange-500 text-white rounded-full p-2 hover:bg-orange-600 transition`}
+    className={`absolute ${direction === 'prev' ? 'left-5' : 'right-5'} top-1/2 transform -translate-y-1/2 z-10 
+    cursor-pointer bg-orange-500 text-white rounded-full shadow-md p-3 hover:bg-orange-600 hover:shadow-lg transition`}
     onClick={onClick}
     aria-label={direction === 'prev' ? 'Previous Slide' : 'Next Slide'}
   >
-    {direction === 'prev' ? '◀' : '▶'}
+    {direction === 'prev' ? <FaChevronLeft size={10} /> : <FaChevronRight size={10} />}
   </button>
 );
 

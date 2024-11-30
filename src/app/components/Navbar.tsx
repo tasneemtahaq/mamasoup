@@ -72,19 +72,7 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="flex space-x-6 items-center mt-4">
-              <Link href="/cart" className="relative">
-                <ShoppingCartIcon className="h-6 w-6 text-orange-500 hover:text-white" />
-                {cartItemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5">
-                    {cartItemCount}
-                  </span>
-                )}
-              </Link>
-              <Link href="/login">
-                <UserIcon className="h-6 w-6 text-orange-500 hover:text-white" />
-              </Link>
-            </div>
+          
           </div>
         </div>
       )}

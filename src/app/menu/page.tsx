@@ -70,6 +70,7 @@ export default function MenuPage() {
     { name: "Greenchilli Masala Fries", price: 120, image: require('@/app/components/greenchilli.jpg') },
     { name: "Barbeque Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
     { name: "Salsa Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Tikka Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
     { name: "Chicken Masala Fries", price: 120, image: require('@/app/components/chickenflavour.jpg') },
     { name: "Spicy Cheese Dip", price: 120, image: require('@/app/components/cheesedip.jpeg') },
     { name: "Mayo Garlic Dip", price: 120, image: require('@/app/components/mayodip.jpeg') },
