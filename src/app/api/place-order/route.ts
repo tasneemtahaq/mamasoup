@@ -30,8 +30,8 @@ export async function POST(request: Request) {
     // Send the message to your phone via Twilio
     await client.messages.create({
       body: message,
-      from: '+12138954184', // Replace with your Twilio number
-      to: '+923312287497', // Replace with your phone number
+      from: 'process.env.TWILIO_PHONE_NUMBER', // Replace with your Twilio number
+      to: 'process.env.RECIPIENT_PHONE_NUMBER', // Replace with your phone number
     });
 
     return NextResponse.json({ message: 'Order placed successfully!' });
