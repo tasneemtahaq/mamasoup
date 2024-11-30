@@ -26,15 +26,15 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
       <Navbar />
-      
+
       <section className="text-center py-20 px-4">
-        <h3 className="text-3xl font-semibold mb-6">Contact Us</h3>
-        <p className="max-w-2xl mx-auto text-xl mb-6">
+        <h3 className="text-3xl font-bold text-gray-800 mb-6">Contact Us</h3>
+        <p className="max-w-2xl mx-auto text-lg mb-6 text-gray-600">
           We’d love to hear from you! Please use the buttons below to reach out to us.
         </p>
 
         {/* Contact Info with Call and Email Buttons */}
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
           <ContactInfo
             label="Phone"
             buttonText="Call Now"
@@ -46,8 +46,6 @@ export default function ContactPage() {
             link="mailto:mamasoup@gmail.com"
           />
         </div>
-
-       
       </section>
     </div>
   );

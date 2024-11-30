@@ -31,14 +31,26 @@ const ImageSlider: React.FC = () => {
     prevArrow: <CustomArrow direction="prev" />,
   };
 
-  const images = ['/image/chickensoup.jpg', '/image/frenchfries.jpg', '/image/golgappay.jpg'];
+  const images = [
+    { src: '/image/chickensoup.jpg', alt: 'Chicken Soup' },
+    { src: '/image/frenchfries.jpg', alt: 'French Fries' },
+    { src: '/image/golgappay.jpg', alt: 'Golgappay' },
+  ];
 
   return (
     <section className="relative h-[75vh] max-h-[800px] overflow-hidden">
       <Slider {...settings}>
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div key={index} className="w-full h-[75vh] relative">
-            <Image src={src} alt={`Slide ${index + 1}`} fill style={{ objectFit: 'cover' }} />
+            {/* Ensuring responsiveness and object-fit */}
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
+              priority={index === 0} // Prioritize the first image for faster loading
+            />
           </div>
         ))}
       </Slider>

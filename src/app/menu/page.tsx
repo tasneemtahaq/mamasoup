@@ -26,7 +26,7 @@ const MenuSection: React.FC<SectionProps> = ({ title, subtitle, dishes }) => {
     <section className="text-center py-10">
       <h3 className="text-4xl font-extrabold text-gray-800 mb-2">{title}</h3>
       {subtitle && <p className="text-2xl font-bold text-orange-500">{subtitle}</p>}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto my-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto my-8">
         {dishes.map((dish) => (
           <div
             key={dish.name}
@@ -68,6 +68,9 @@ export default function MenuPage() {
     { name: "Chatpata Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
     { name: "Cheese Masala Fries", price: 120, image: require('@/app/components/cheese.jpg') },
     { name: "Greenchilli Masala Fries", price: 120, image: require('@/app/components/greenchilli.jpg') },
+    { name: "Barbeque Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Salsa Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Chicken Masala Fries", price: 120, image: require('@/app/components/chickenflavour.jpg') },
     { name: "Spicy Cheese Dip", price: 120, image: require('@/app/components/cheesedip.jpeg') },
     { name: "Mayo Garlic Dip", price: 120, image: require('@/app/components/mayodip.jpeg') },
   ];
