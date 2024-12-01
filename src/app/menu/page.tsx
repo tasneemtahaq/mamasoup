@@ -59,7 +59,7 @@ export default function MenuPage() {
     { name: "Chicken CornSoup (Single)", price: 120, image: require('@/app/components/soup.jpg') },
     { name: "Chicken CornSoup (Family)", price: 400, image: require('@/app/components/soup.jpg') },
     { name: "Add Boiled Egg", price: 50, image: require('@/app/components/egg.jpg') },
-    { name: "Add Slims Chips", price: 30, image: require('@/app/components/slims.jpg') },
+    { name: "Add Slims ", price: 30, image: require('@/app/components/slims.jpg') },
     { name: "Add Crackers", price: 30, image: require('@/app/components/crackers.jpg') },
   ];
 
@@ -85,7 +85,7 @@ export default function MenuPage() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <Navbar />
-      <MenuSection title="Main Dishes" subtitle="Flavour Up Your Bowl" dishes={mainDishes} />
+      <MenuSection title="Main Menu" subtitle="Flavour Up Your Bowl" dishes={mainDishes} />
       <MenuSection title="Flavoured Fries" subtitle="Crispy, Tasty & Irresistible" dishes={fries} />
       <MenuSection title="Street Plates" subtitle="Indulge Your Cravings" dishes={streetplate} />
       <Footer />
