@@ -5,6 +5,7 @@ import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo } from 'react';
+import Footer from '../components/Footer';
 
 export default function CartPage() {
   const { cart, incrementItem, decrementItem, removeFromCart } = useCart();
@@ -71,6 +72,7 @@ export default function CartPage() {
           </div>
         )}
       </section>
+      <Footer/>
     </div>
   );
 }

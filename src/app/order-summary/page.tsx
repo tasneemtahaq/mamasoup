@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 interface CartItem {
   name: string;
@@ -120,6 +121,7 @@ const OrderSummaryPage: React.FC = () => {
                 Your order will be delivered in approximately{" "}
                 <strong>{estimatedDeliveryTime}</strong>.
               </p>
+              <p className="text-2xl font-bold">Delivery charges may apply.</p>
             </div>
           </div>
 
@@ -132,6 +134,7 @@ const OrderSummaryPage: React.FC = () => {
           </button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

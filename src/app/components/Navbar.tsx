@@ -1,3 +1,4 @@
+// src/app/components/navbar.tsx
 "use client";
 
 import Link from 'next/link';
@@ -57,7 +58,7 @@ const Navbar = () => {
               </span>
             )}
           </Link>
-          <Link href="/login">
+          <Link href="/form/LoginForm">
             <UserIcon className="h-6 w-6 text-orange-500 hover:text-white" />
           </Link>
         </div>
@@ -72,7 +73,6 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-          
           </div>
         </div>
       )}
