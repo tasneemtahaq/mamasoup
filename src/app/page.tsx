@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Footer from './components/Footer';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+
 // Custom Arrow Component
 const CustomArrow: React.FC<{ onClick?: () => void; direction: 'prev' | 'next' }> = ({ onClick, direction }) => (
   <button
@@ -63,7 +64,7 @@ const ImageSlider: React.FC = () => {
 // Hero Section Component
 const HeroSection: React.FC = () => (
   <section className="text-center py-20 text-gray-800 px-4 sm:px-8">
-    <h2 className="text-4xl sm:text-5xl text-orange-500 font-extrabold mb-4">
+    <h2 className="text-4xl sm:text-5xl text-orange-400 font-extrabold mb-4">
       Welcome to Mama Soups & Beverages
     </h2>
     <p className="text-base sm:text-lg mb-6">Maintaining Quality Since 1984!</p>

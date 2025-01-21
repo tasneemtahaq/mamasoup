@@ -56,30 +56,30 @@ const MenuSection: React.FC<SectionProps> = ({ title, subtitle, dishes }) => {
 
 export default function MenuPage() {
   const mainDishes: Dish[] = [
-    { name: "Chicken CornSoup (Single)", price: 120, image: require('@/app/components/soup.jpg') },
-    { name: "Chicken CornSoup (Family)", price: 400, image: require('@/app/components/soup.jpg') },
-    { name: "Add Boiled Egg", price: 50, image: require('@/app/components/egg.jpg') },
+    { name: "Chicken CornSoup (Single)", price: 100, image: require('@/app/components/soup.jpg') },
+    { name: "Chicken CornSoup (Family)", price: 350, image: require('@/app/components/soup.jpg') },
+    { name: "Add Boiled Egg", price: 40, image: require('@/app/components/egg.jpg') },
     { name: "Add Slims ", price: 30, image: require('@/app/components/slims.jpg') },
     { name: "Add Crackers", price: 30, image: require('@/app/components/crackers.jpg') },
   ];
 
   const fries: Dish[] = [
     { name: "Plain Salted Fries", price: 100, image: require('@/app/components/plain.jpg') },
-    { name: "Chatpata Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
-    { name: "Cheese Masala Fries", price: 120, image: require('@/app/components/cheese.jpg') },
-    { name: "Greenchilli Masala Fries", price: 120, image: require('@/app/components/greenchilli.jpg') },
-    { name: "Barbeque Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
-    { name: "Salsa Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
-    { name: "Tikka Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
-    { name: "Chicken Masala Fries", price: 120, image: require('@/app/components/chickenflavour.jpg') },
-    { name: "Spicy Cheese Dip", price: 120, image: require('@/app/components/cheesedip.jpeg') },
-    { name: "Mayo Garlic Dip", price: 120, image: require('@/app/components/mayodip.jpeg') },
+    { name: "Chatpata Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
+    { name: "Cheese Masala Fries", price: 100, image: require('@/app/components/cheese.jpg') },
+    { name: "Greenchilli Masala Fries", price: 100, image: require('@/app/components/greenchilli.jpg') },
+    { name: "Barbeque Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
+    { name: "Salsa Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
+    { name: "Tikka Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
+    { name: "Chicken Masala Fries", price: 100, image: require('@/app/components/chickenflavour.jpg') },
+    { name: "Spicy Cheese Dip", price: 100, image: require('@/app/components/cheesedip.jpeg') },
+    { name: "Mayo Garlic Dip", price: 100, image: require('@/app/components/mayodip.jpeg') },
   ];
 
   const streetplate: Dish[] = [
-    { name: "Pani Puri", price: 100, image: require('@/app/components/panipuri.jpeg') },
-    { name: "Meethi Puri", price: 120, image: require('@/app/components/meethipuri.jpeg') },
-    { name: "Dahi Puri", price: 120, image: require('@/app/components/meethipuri.jpeg') },
+    { name: "Pani Puri", price: 180, image: require('@/app/components/panipuri.jpeg') },
+    { name: "Meethi Puri", price: 200, image: require('@/app/components/meethipuri.jpeg') },
+ 
   ];
 
   return (
