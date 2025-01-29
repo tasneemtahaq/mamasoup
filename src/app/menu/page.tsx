@@ -78,7 +78,7 @@ export default function MenuPage() {
 
   const streetplate: Dish[] = [
     { name: "Pani Puri", price: 180, image: require('@/app/components/panipuri.jpeg') },
-    { name: "Meethi Puri", price: 200, image: require('@/app/components/meethipuri.jpeg') },
+    { name: "Meethi Puri", price: 180, image: require('@/app/components/meethipuri.jpeg') },
  
   ];
 
