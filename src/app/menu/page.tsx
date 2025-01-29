@@ -65,13 +65,13 @@ export default function MenuPage() {
 
   const fries: Dish[] = [
     { name: "Plain Salted Fries", price: 100, image: require('@/app/components/plain.jpg') },
-    { name: "Chatpata Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
+    { name: "Chatpata Masala", price: 100, image: require('@/app/components/salsa.jpg') },
     { name: "Cheese Masala Fries", price: 100, image: require('@/app/components/cheese.jpg') },
-    { name: "Greenchilli Masala Fries", price: 100, image: require('@/app/components/greenchilli.jpg') },
-    { name: "Barbeque Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
+    { name: "Greenchilli Masala ", price: 100, image: require('@/app/components/greenchilli.jpg') },
+    { name: "Barbeque Masala ", price: 100, image: require('@/app/components/salsa.jpg') },
     { name: "Salsa Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
     { name: "Tikka Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
-    { name: "Chicken Masala Fries", price: 100, image: require('@/app/components/chickenflavour.jpg') },
+    { name: "Chicken Masala", price: 100, image: require('@/app/components/chickenflavour.jpg') },
     { name: "Spicy Cheese Dip", price: 100, image: require('@/app/components/cheesedip.jpeg') },
     { name: "Mayo Garlic Dip", price: 100, image: require('@/app/components/mayodip.jpeg') },
   ];
