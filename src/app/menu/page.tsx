@@ -64,16 +64,16 @@ export default function MenuPage() {
   ];
 
   const fries: Dish[] = [
-    { name: "Plain Salted Fries", price: 100, image: require('@/app/components/plain.jpg') },
-    { name: "Chatpata Masala", price: 100, image: require('@/app/components/salsa.jpg') },
-    { name: "Cheese Masala Fries", price: 100, image: require('@/app/components/cheese.jpg') },
-    { name: "Greenchilli Masala ", price: 100, image: require('@/app/components/greenchilli.jpg') },
-    { name: "Barbeque Masala ", price: 100, image: require('@/app/components/salsa.jpg') },
-    { name: "Salsa Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
-    { name: "Tikka Masala Fries", price: 100, image: require('@/app/components/salsa.jpg') },
-    { name: "Chicken Masala", price: 100, image: require('@/app/components/chickenflavour.jpg') },
-    { name: "Spicy Cheese Dip", price: 100, image: require('@/app/components/cheesedip.jpeg') },
-    { name: "Mayo Garlic Dip", price: 100, image: require('@/app/components/mayodip.jpeg') },
+    { name: "Plain Salted Fries", price: 120, image: require('@/app/components/plain.jpg') },
+    { name: "Chatpata Masala", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Cheese Masala Fries", price: 120, image: require('@/app/components/cheese.jpg') },
+    { name: "Greenchilli Masala ", price: 120, image: require('@/app/components/greenchilli.jpg') },
+    { name: "Barbeque Masala ", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Salsa Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Tikka Masala Fries", price: 120, image: require('@/app/components/salsa.jpg') },
+    { name: "Chicken Masala", price: 120, image: require('@/app/components/chickenflavour.jpg') },
+    { name: "Spicy Cheese Dip", price: 120, image: require('@/app/components/cheesedip.jpeg') },
+    { name: "Mayo Garlic Dip", price: 120, image: require('@/app/components/mayodip.jpeg') },
   ];
 
   const streetplate: Dish[] = [

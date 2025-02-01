@@ -126,13 +126,13 @@ const CheckoutPage: React.FC = () => {
             type="button"
             onClick={handlePlaceOrder}
             disabled={loading}
-            className={`w-full p-3 mt-4 bg-green-600 text-white font-semibold rounded-lg transition duration-300 ${
-              loading ? "cursor-not-allowed bg-green-400" : "hover:bg-green-700"
+            className={`w-full p-3 mt-4 bg-orange-600 text-white font-semibold rounded-lg transition duration-300 ${
+              loading ? "cursor-not-allowed bg-orange-400" : "hover:bg-orange-500"
             }`}
           >
             {loading ? "Placing Order..." : "Place Order"}
           </button>
-          {error && <p className="text-red-500 text-center mt-4">{error}</p>}
+          {error && <p className="text-orange-500 text-center mt-4">{error}</p>}
         </form>
       </div>
       <Footer />
