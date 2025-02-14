@@ -70,24 +70,22 @@ const DishCard: React.FC<DishCardProps> = ({ dish, addToCart }) => {
       <h4 className="text-lg font-semibold mt-3">{dish.name}</h4>
 
       {dish.options ? (
-        <div className="mt-2 space-y-1">
+        <div className="mt-2">
           {dish.options.map((option, index) => (
-            <label key={index} className="flex items-center text-sm">
-              {/* Option label */}
-              <span>{option.label}</span>
-              {/* Radio button positioned right before the price */}
+            <label key={index} className="mr-4 text-sm">
               <input
                 type="radio"
                 name={`${dish.name}-option`}
-                className="accent-orange-500 mx-2"
+                className="mr-1"
                 checked={selectedOption === index}
                 onChange={() => setSelectedOption(index)}
               />
-              {/* Price text */}
-              <span>(Rs. {option.price.toFixed(2)})</span>
+              {option.label} (Rs. {option.price.toFixed(2)})
             </label>
           ))}
-         
+          <span className="block font-bold text-lg text-gray-700 mt-2">
+            Selected: Rs. {displayPrice.toFixed(2)}
+          </span>
         </div>
       ) : (
         <span className="block font-bold text-lg text-gray-700">
@@ -105,6 +103,7 @@ const DishCard: React.FC<DishCardProps> = ({ dish, addToCart }) => {
               ? `${dish.name} (${dish.options[selectedOption].label})`
               : dish.name,
             price: displayPrice,
+            // Force quantity to be a number (default to 1)
             quantity: dish.quantity !== undefined ? dish.quantity : 1,
           };
           addToCart(dishToAdd);
@@ -115,7 +114,6 @@ const DishCard: React.FC<DishCardProps> = ({ dish, addToCart }) => {
     </div>
   );
 };
-
 
 // Import images using ES module imports instead of require()
 import soupImg from "@/app/components/soup.jpg";
@@ -146,7 +144,7 @@ export default function MenuPage() {
   // Fries with options for size
   const fries: MenuDish[] = [
     {
-      name: "Salted",
+      name: "Plain Salted Fries",
       price: 120, // default; will be overridden by selected option
       image: plainImg,
       quantity: 0,
@@ -156,7 +154,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Chatpata",
+      name: "Chatpata Masala Fries",
       price: 120,
       image: salsaImg,
       quantity: 0,
@@ -166,7 +164,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Cheese ",
+      name: "Cheese Masala Fries",
       price: 120,
       image: cheeseImg,
       quantity: 0,
@@ -176,7 +174,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Greenchilli",
+      name: "Greenchilli Masala Fries",
       price: 120,
       image: greenchilliImg,
       quantity: 0,
@@ -186,7 +184,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Barbeque",
+      name: "Barbeque Masala Fries",
       price: 120,
       image: salsaImg,
       quantity: 0,
@@ -196,7 +194,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Salsa ",
+      name: "Salsa Masala Fries",
       price: 120,
       image: salsaImg,
       quantity: 0,
@@ -206,7 +204,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Tikka",
+      name: "Tikka Masala Fries",
       price: 120,
       image: salsaImg,
       quantity: 0,
@@ -216,7 +214,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Chicken ",
+      name: "Chicken Masala Fries",
       price: 120,
       image: chickenflavourImg,
       quantity: 0,
