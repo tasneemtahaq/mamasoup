@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-gray-900 text-white py-5 shadow-lg">
+    <header className="bg-gray-900  text-white py-5 shadow-lg">
       <div className="container mx-auto flex justify-between items-center px-6">
         <div className="flex items-center">
           <Image src="/image/mamasoup.png" alt="Mama Soup Logo" width={100} height={100} />

@@ -113,7 +113,7 @@ const CheckoutPage: React.FC = () => {
             type="text"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            placeholder="Shipping Address"
+            placeholder="House No./ Street / Area"
             required
           />
           <FormInput

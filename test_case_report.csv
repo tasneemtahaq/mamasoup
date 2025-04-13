@@ -1,5 +1,0 @@
-Test Case ID,Module,Test Description,Test Steps,Expected Result,Actual Result,Status,Comments
-TC001,Login,Verify login with valid credentials,Enter email & password,Redirect to dashboard,Login successful,Pass,-
-TC002,Login,Verify error for incorrect password,Enter wrong password,Show error message,Error message displayed,Pass,-
-TC003,Payment,Verify JazzCash payment,Enter JazzCash details & confirm,Payment should be successful,Payment failed,Fail,API timeout issue
-TC004,Notifications,Check Twilio SMS delivery,Place an order,SMS should be received,SMS not received,Fail,Check Twilio logs

@@ -15,7 +15,7 @@ Welcome to Mama Soups, where tradition meets taste! Established over 40 years ag
 What started as a humble winter tradition quickly grew into a beloved name across the city, celebrated for its consistent flavors and comforting recipes. Today, we carry forward this legacy, staying true to the original taste while introducing exciting new items like flavored fries, pani puri, and our famous pizza fries.
 
 At Mama Soups, we are all about serving happiness in every bite. Whether you are craving nostalgia or looking to explore something new, we are here to make your food experience unforgettable.<br></br>
-<br></br> For more information please navigate to Contact Section.
+<br></br> For more information please navigate to Contact Section or Our Social media Accounts below.
         </p>
       </section>
     </div>
