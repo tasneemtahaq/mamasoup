@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+      "types": ["node"], // Include 'node' types
+      "typeRoots": ["./node_modules/@types"], // Ensure TypeScript looks for types here
+      "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"

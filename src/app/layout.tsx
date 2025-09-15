@@ -15,7 +15,7 @@ const NotificationBar: React.FC = () => (
     behavior="scroll" 
     direction="left" 
     scrollamount="5">
-      We are taking online Orders from 5:00 PM to 10:30 PM only
+      We are taking online Orders from 5:00 PM to 10:30 PM only, Sunday closed
     </marquee>
   </div>
 );

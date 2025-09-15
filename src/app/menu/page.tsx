@@ -107,17 +107,26 @@ const soupImg = "/image/soup.jpg";
 const eggImg = "/image/egg.jpg";
 const slimsImg = "/image/slims.jpg";
 const crackersImg = "/image/crackers.jpg";
-const plainImg = "/image/plain.jpg";
-const salsaImg = "/image/salsa.jpg";
-const cheeseImg = "/image/cheese.jpg";
-const greenchilliImg = "/image/greenchilli.jpg";
-const chickenflavourImg = "/image/chickenflavour.jpg";
+const friesredImg = "/image/friesred.jpg";
+const friesgreenImg = "/image/friesgreen.jpg";
+const friesyellImg = "/image/friesyell.jpg";
+const frieswhiteImg = "/image/frieswhite.jpg";
 const cheesedipImg = "/image/cheesedip.jpeg";
 const mayodipImg = "/image/mayodip.jpeg";
 const panipuriImg = "/image/panipuri.jpeg";
 const meethipuriImg = "/image/meethipuri.jpeg";
-const sodaImg = "/image/soda.jpg";
-const dealImg = "/image/deal.jpg";
+const appleImg = "/image/apple.jpg";
+const lemonImg = "/image/lemon.jpg";
+const lycheeImg = "/image/lychee.jpg";
+const rasberryImg = "/image/rasberry.jpg";
+const icecreamsodaImg = "/image/icecreamsoda.jpg";
+const peachImg = "/image/peach.jpg";
+const pineappleImg = "/image/pineapple.jpg";
+const roseImg = "/image/rose.jpg";
+const orangeImg = "/image/orange.jpg";
+const mangImg = "/image/mango.jpg";
+const vimtoImg = "/image/vimto.jpg";
+const blueberryImg = "/image/blueberry.jpg";
 
 // Define menu items for each category
 const menuItems: { [key: string]: MenuDish[] } = {
@@ -132,7 +141,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Salted",
       price: 120,
-      image: plainImg,
+      image: friesredImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -142,7 +151,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Chatpata",
       price: 120,
-      image: salsaImg,
+      image: friesredImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -152,7 +161,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Cheese",
       price: 120,
-      image: cheeseImg,
+      image: friesyellImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -162,7 +171,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Greenchilli",
       price: 120,
-      image: greenchilliImg,
+      image: friesgreenImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -172,7 +181,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Barbeque",
       price: 120,
-      image: salsaImg, // Using salsaImg as a placeholder for Barbeque
+      image: friesredImg, // Using salsaImg as a placeholder for Barbeque
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -182,7 +191,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Salsa",
       price: 120,
-      image: salsaImg,
+      image: friesredImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -192,7 +201,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Tikka",
       price: 120,
-      image: chickenflavourImg,
+      image: friesredImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -202,7 +211,7 @@ const menuItems: { [key: string]: MenuDish[] } = {
     {
       name: "Chicken",
       price: 120,
-      image: chickenflavourImg,
+      image: frieswhiteImg,
       quantity: 0,
       options: [
         { label: "Small", price: 70 },
@@ -217,22 +226,20 @@ const menuItems: { [key: string]: MenuDish[] } = {
     { name: "Meethi Puri", price: 180, image: meethipuriImg, quantity: 0 },
   ],
   Soda: [
-    { name: "Coca Cola", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Sprite", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Fanta", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Pepsi", price: 80, image: sodaImg, quantity: 0 },
-    { name: "7Up", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Mountain Dew", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Mirinda", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Dr Pepper", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Root Beer", price: 80, image: sodaImg, quantity: 0 },
-    { name: "Soda Water", price: 80, image: sodaImg, quantity: 0 },
+    { name: "Apple", price: 100, image: appleImg, quantity: 0 },
+    { name: "Blueberry", price: 100, image: blueberryImg, quantity: 0 },
+    { name: "Vimto", price: 100, image: vimtoImg, quantity: 0 },
+    { name: "Lemon", price: 100, image: lemonImg, quantity: 0 },
+    { name: "Lychee", price: 100, image: lycheeImg, quantity: 0 },
+    { name: "Rasberry", price: 100, image: rasberryImg, quantity: 0 },
+    { name: "Icecream Soda", price: 100, image: icecreamsodaImg, quantity: 0 },
+    { name: "Peach", price: 100, image: peachImg, quantity: 0 },
+    { name: "Pineapple", price: 100, image: pineappleImg, quantity: 0 },
+    { name: "Rose", price: 100, image: roseImg, quantity: 0 },
+    { name: "Orange", price: 100, image: orangeImg, quantity: 0 },
+    { name: "Mango", price: 100, image: mangImg, quantity: 0 },
   ],
-  Deals: [
-    { name: "Deal 1: Soup + Fries", price: 250, image: dealImg, quantity: 0 },
-    { name: "Deal 2: Pani Puri + Soda", price: 240, image: dealImg, quantity: 0 },
-    { name: "Deal 3: Fries + Soda + Dip", price: 300, image: dealImg, quantity: 0 },
-  ],
+ 
 };
 
 export default function MenuPage() {
@@ -243,15 +250,15 @@ export default function MenuPage() {
       <Navbar />
       <div className="flex justify-center space-x-4 py-4 bg-white shadow-md sticky top-0 z-50">
         {Object.keys(menuItems).map((category) => (
-          <button
+          <div
             key={category}
-            className={`px-4 py-2 font-semibold ${
+            className={`px-4 py-2 font-semibold cursor-pointer ${
               activeTab === category ? "text-orange-500 border-b-2 border-orange-500" : "text-gray-600"
             }`}
             onClick={() => setActiveTab(category)}
           >
             {category}
-          </button>
+          </div>
         ))}
       </div>
       <div className="p-6 max-w-6xl mx-auto">
